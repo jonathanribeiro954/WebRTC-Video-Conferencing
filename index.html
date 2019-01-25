@@ -71,42 +71,41 @@
         </script>
 
         <!-- script used to stylize video element -->
-        <script src="https://cdn.webrtc-experiment.com/getMediaElement.min.js"> </script>
+        <script src="https://cdn.webrtc-experiment.com/getMediaElement.min.js"></script>
 
-        <script src="https://cdn.webrtc-experiment.com/socket.io.js"> </script>
+        <script src="https://cdn.webrtc-experiment.com/socket.io.js"></script>
         <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
         <script src="https://cdn.webrtc-experiment.com/IceServersHandler.js"></script>
         <script src="https://cdn.webrtc-experiment.com/CodecsHandler.js"></script>
-        <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
-        <script src="https://cdn.webrtc-experiment.com/video-conferencing/conference.js"> </script>
+        <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"></script>
+        <script src="https://cdn.webrtc-experiment.com/video-conferencing/conference.js"></script>
     </head>
 
     <body>
         <article>
             <header style="text-align: center;">
                 <h1>
-                    WebRTC Video Conferencing
+                    Face to Face
                 </h1>
                 <p>
-                    <a href="https://www.webrtc-experiment.com/">HOME</a>
-                    <span> &copy; </span>
-                    <a href="http://www.MuazKhan.com/" target="_blank">Muaz Khan</a>
+                    <a href="index.html">Início</a>
+                    <span>  </span>
+                    <a href="http://www.MuazKhan.com/" target="_blank"></a>
 
-                    .
-                    <a href="http://twitter.com/WebRTCWeb" target="_blank" title="Twitter profile for WebRTC Experiments">@WebRTCWeb</a>
 
-                    .
-                    <a href="https://github.com/muaz-khan?tab=repositories" target="_blank" title="Github Profile">Github</a>
+                    <a href="http://twitter.com/WebRTCWeb" target="_blank" title="Twitter profile for WebRTC Experiments"></a>
 
-                    .
-                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/issues?state=open" target="_blank">Latest issues</a>
 
-                    .
-                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/commits/master" target="_blank">What's New?</a>
+                    <a href="https://github.com/muaz-khan?tab=repositories" target="_blank" title="Github Profile"></a>
+
+
+                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/issues?state=open" target="_blank"></a>
+
+
+                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/commits/master" target="_blank"></a>
                 </p>
             </header>
 
-            <div class="github-stargazers"></div>
 
             <!-- just copy this <section> and next script -->
             <section class="experiment">
@@ -115,8 +114,8 @@
                         Private ?? <a href="/video-conferencing/" target="_blank" title="Open this link in new tab. Then your conference room will be private!"><code><strong id="unique-token">#123456789</strong></code></a>
                     </span>
 
-                    <input type="text" id="conference-name" placeholder="Conference Name" style="width: 50%;">
-                    <button id="setup-new-room" class="setup">Setup New Conference</button>
+                    <input type="text" id="conference-name" placeholder="Id do atendente" style="width: 50%;">
+                    <button id="setup-new-room" class="setup">Criar sala</button>
                 </section>
 
                 <!-- list of all available conferencing rooms -->
@@ -180,8 +179,8 @@
                         if (typeof roomsList === 'undefined') roomsList = document.body;
 
                         var tr = document.createElement('tr');
-                        tr.innerHTML = '<td><strong>' + room.roomName + '</strong> shared a conferencing room with you!</td>' +
-                            '<td><button class="join">Join</button></td>';
+                        tr.innerHTML = '<td><strong>' + room.roomName + '</strong> tem uma sala criada!</td>' +
+                            '<td><button class="join">Entrar</button></td>';
                         roomsList.appendChild(tr);
 
                         var joinRoomButton = tr.querySelector('.join');
@@ -284,7 +283,7 @@
                 (function() {
                     var uniqueToken = document.getElementById('unique-token');
                     if (uniqueToken)
-                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;display: block;"><a href="' + location.href + '" target="_blank">Right click to copy & share this private link</a></h2>';
+                        if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;display: block;"><a href="' + location.href + '" target="_blank">Atendimento</a></h2>';
                         else uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace( /\./g , '-');
                 })();
 
@@ -322,17 +321,6 @@
 
             </script>
 
-            <section class="experiment">
-                <ol>
-                    <li>This <a href="https://www.webrtc-experiment.com/">WebRTC</a> experiment is aimed to transmit audio/video streams in many-to-many style.</li>
-                    <li>It setups multiple peer connections to support multi-user connectivity feature. Remember, <a href="https://www.webrtc-experiment.com/">WebRTC</a> doesn't supports 3-way handshake!</li>
-                    <li>Out of multi-peers establishment; many RTP-ports are opened according to number of media streams referenced to each peer connection.</li>
-                    <li>Multi-ports establishment will cause <a href="https://www.webrtc-experiment.com/docs/RTP-usage.html">huge CPU and bandwidth usage</a>!</li>
-                    <li>Mesh networking model is implemented to open multiple interconnected peer connections.</li>
-                    <li>Maximum peer connections limit is 256 (on chrome). It means that 256 users can be interconnected!</li>
-                </ol>
-            </section>
-
             <section class="experiment"><small id="send-message"></small></section>
         </article>
 
@@ -340,9 +328,9 @@
 
         <footer>
             <p>
-                <a href="https://www.webrtc-experiment.com/">WebRTC Experiments</a>
-                © <a href="https://plus.google.com/+MuazKhan" rel="author" target="_blank">Muaz Khan</a>
-                <a href="mailto:muazkh@gmail.com" target="_blank">muazkh@gmail.com</a>
+                <a href="https://www.webrtc-experiment.com/"></a>
+                 <a href="https://plus.google.com/+MuazKhan" rel="author" target="_blank"></a>
+                <a href="mailto:muazkh@gmail.com" target="_blank"></a>
             </p>
         </footer>
 
